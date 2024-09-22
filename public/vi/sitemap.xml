@@ -14,18 +14,6 @@
                 href="//localhost:1313/vi/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/2--amazon-s3/2.1-t%E1%BA%A1o-s3-bucket/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/2--amazon-s3/2.1-t%E1%BA%A1o-s3-bucket/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/2--amazon-s3/2.1-t%E1%BA%A1o-s3-bucket/"
-                />
-  </url><url>
     <loc>//localhost:1313/vi/3-amazon-cloudfront/3.1-t%E1%BA%A1o-cloudfront-distribution/</loc>
     <xhtml:link
                 rel="alternate"
@@ -36,6 +24,18 @@
                 rel="alternate"
                 hreflang="vi"
                 href="//localhost:1313/vi/3-amazon-cloudfront/3.1-t%E1%BA%A1o-cloudfront-distribution/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/2--amazon-s3/2.1-t%E1%BA%A1o-s3-bucket/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/2--amazon-s3/2.1-t%E1%BA%A1o-s3-bucket/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/2--amazon-s3/2.1-t%E1%BA%A1o-s3-bucket/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/1-introduce/</loc>
