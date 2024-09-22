@@ -18,7 +18,7 @@ home = [ "HTML", "RSS", "JSON"]
   
 [Languages]
 [Languages.en]
-title = "WORK WITH AMAZON SYSTEM MANAGER - SESSION MANAGER"
+title = "Setting Up and Managing Content Distribution with Amazon S3 and CloudFront"
 weight = 1
 languageName = "English"
 
@@ -35,7 +35,7 @@ url = "https://www.facebook.com/groups/awsstudygroupfcj"
 weight = 20
 
 [Languages.vi]
-title = "LÀM VIỆC VỚI AMAZON SYSTEM MANAGER - SESSION MANAGER"
+title = "Thiết lập và Quản lý Phân Phối Nội Dung với Amazon S3 và CloudFront"
 weight = 2
 languageName = "Tiếng Việt"
 
