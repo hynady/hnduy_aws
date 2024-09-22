@@ -1,0 +1,113 @@
+[
+{
+	"uri": "//localhost:1313/3-amazon-cloudfront/3.1-t%E1%BA%A1o-cloudfront-distribution/",
+	"title": "Create Distribution",
+	"tags": [],
+	"description": "",
+	"content": " Access AWS CloudFront:\nFrom the AWS Management Console, search for and select \u0026ldquo;CloudFront\u0026rdquo;. Click on \u0026ldquo;Create\u0026rdquo;: Select \u0026ldquo;Origin Domain Name\u0026rdquo;, enter your S3 website URL (e.g., my-static-website-lab.s3.amazonaws.com).\nSelect “Use website endpoint” Keep the default options and click \u0026ldquo;Create Distribution\u0026rdquo;. "
+},
+{
+	"uri": "//localhost:1313/2--amazon-s3/2.1-t%E1%BA%A1o-s3-bucket/",
+	"title": "Create S3 Bucket",
+	"tags": [],
+	"description": "",
+	"content": " Access AWS S3:\nLog in to the AWS Management Console. Search for and select S3. Create a New Bucket:\nClick on Create bucket. Enter the bucket name (e.g., my-static-website-lab). Click Create bucket to complete. "
+},
+{
+	"uri": "//localhost:1313/4-x%C3%B3a-v%C3%A0-d%E1%BB%8Dn-d%E1%BA%B9p-t%C3%A0i-nguy%C3%AAn/4.1-x%C3%B3a-cloudfront-distribution/",
+	"title": "Delete CloudFront Distribution",
+	"tags": [],
+	"description": "",
+	"content": " Access CloudFront:\nIn the AWS Management Console, search for \u0026ldquo;CloudFront\u0026rdquo; and open the service. Select the Distribution to delete:\nFind the Distribution you created. Select that Distribution and click \u0026ldquo;Disable\u0026rdquo;. This will stop CloudFront from distributing content. Delete the Distribution:\nOnce the Distribution has changed to \u0026ldquo;Disabled\u0026rdquo; status, select it again and click \u0026ldquo;Delete\u0026rdquo;. Confirm the deletion. Note: The process of deleting a CloudFront Distribution may take a few minutes to complete. "
+},
+{
+	"uri": "//localhost:1313/",
+	"title": "Introduction",
+	"tags": [],
+	"description": "",
+	"content": "Setting Up and Managing Content Distribution with Amazon S3 and CloudFront In today\u0026rsquo;s digital age, fast and efficient content distribution is a crucial factor determining the success of any web application. Amazon Web Services (AWS) provides powerful solutions like Amazon S3 (Simple Storage Service) and Amazon CloudFront to help you store and distribute content easily.\nAmazon S3 allows you to store data as objects with high reliability, while CloudFront, a content delivery network (CDN) service, accelerates access to that content from anywhere in the world. In this guide, we will explore the process of setting up an S3 bucket to store static content, configuring CloudFront to distribute that content, and finally, how to delete the CloudFront Distribution when it is no longer needed. Through this, you will gain an overview of how to optimize content delivery to users.\n"
+},
+{
+	"uri": "//localhost:1313/1-introduce/",
+	"title": "Overview",
+	"tags": [],
+	"description": "",
+	"content": "1. Lab Objectives Understand how to host a static website on S3. Understand how to use CloudFront to optimize the website. Use free services or incur no costs. 2. Basic Knowledge Amazon S3 (Simple Storage Service): Amazon S3 is an object storage service that provides the ability to store data files in \u0026ldquo;buckets\u0026rdquo;. S3 is very popular for storing large data or static websites (HTML, CSS, JS). Static websites do not require backend processing servers but only have fixed content. Amazon CloudFront: CloudFront is AWS\u0026rsquo;s content delivery network (CDN) service, which helps improve website load performance by caching static content and distributing it from locations closest to the end users. Cost: S3 provides 5GB free in the free tier. CloudFront has a free tier for 1TB of data transfer each month for the first 12 months. 3. Lab Requirements AWS account with free tier. A simple static website (just a few basic HTML, CSS, and JS files). 4. Navigation Introduction Create S3 Bucket Upload Content to Bucket Configure Bucket for Static Website Check Create CloudFront Distribution Check CloudFront Distribution Delete CloudFront Distribution Delete S3 Bucket Check Successful Cleanup Summary Note: This is an introduction to the steps involved in the project.\n"
+},
+{
+	"uri": "//localhost:1313/2--amazon-s3/",
+	"title": "Amazon S3",
+	"tags": [],
+	"description": "",
+	"content": "Amazon S3 Theoretical Basis of Amazon S3 Amazon S3 (Simple Storage Service) is an object storage service provided by Amazon Web Services (AWS). S3 is designed to store and retrieve data with high reliability, security, and scalability. Below are the important concepts and features related to S3 in this lab:\n1. Bucket Bucket is the most basic unit in Amazon S3, where objects are stored. Each bucket is uniquely named within an AWS region and can contain multiple objects such as files or other data. In this lab, we will create a bucket to store static content (HTML, CSS, JavaScript) and use it as the origin for CloudFront to distribute content. 2. Object Object is the main component of data stored in S3, including file data and related metadata. Each object is uniquely identified by a key within a bucket. In this lab, your content files (static website) will be stored as objects in the bucket. 3. Access Control S3 provides multiple ways to manage access to buckets and objects, including Bucket Policies, IAM Roles, and Access Control Lists (ACLs). In the lab, we will configure public access permissions for the objects in the bucket through a Bucket Policy to allow users to access the content via CloudFront. 4. Storage Features Amazon S3 offers various storage classes to optimize costs based on access frequency and performance requirements, including: S3 Standard: For frequently accessed data. S3 Standard-IA: For infrequently accessed data but requires quick retrieval. S3 Glacier: For long-term storage with low cost. In this lab, we will use S3 Standard as it is suitable for static content files that need to be quickly distributed via CloudFront. 5. S3 Static Website Hosting S3 allows you to host a static website directly from a bucket without a web server. HTML, CSS, and JavaScript files can be served as a static website. However, in this lab, we will not use this feature but instead use CloudFront to accelerate content distribution. 6. Integration with CloudFront Amazon CloudFront is a CDN (Content Delivery Network) that helps distribute content from sources like S3 to users with higher speed through edge locations worldwide. In this lab, S3 will be used as the Origin for CloudFront, from which static content files will be distributed to users globally with the best performance. 7. Bucket Policy Configuration Bucket Policy allows you to control access for the entire bucket and all objects within it. This is particularly useful when you want to publicly share content in your bucket, such as static files that CloudFront will distribute. We will create and apply a bucket policy to allow public access to the content without manually granting permissions for each file. 8. Security and Monitoring S3 supports data encryption at rest (server-side encryption) and in transit (SSL/TLS). You can enable encryption for objects to secure your data. S3 Logs and AWS CloudTrail help track requests to the bucket, aiding in effective data management and security. Summary Amazon S3 is a powerful and flexible storage tool that allows efficient storage and distribution of content. In this lab, you will learn how to use S3 as the origin for CloudFront to distribute static content globally. Configuring access permissions, bucket policies, and optimizing storage classes are crucial elements in the deployment process.\nIn this section, we will explore Amazon S3 and the steps to work with it.\nGo to the guide to create an S3 Bucket Go to the guide to upload content to the Bucket Go to the guide to check "
+},
+{
+	"uri": "//localhost:1313/3-amazon-cloudfront/3.2-ki%E1%BB%83m-tra-cloudfront-distribution/",
+	"title": "Check CloudFront Domain",
+	"tags": [],
+	"description": "",
+	"content": " Get CloudFront URL:\nAfter creation, you will see that CloudFront provides a URL Use this URL to access your website through CloudFront:\nOpen a browser and access your CloudFront URL. You will see that the website loads faster and is distributed from various locations around the world. "
+},
+{
+	"uri": "//localhost:1313/4-x%C3%B3a-v%C3%A0-d%E1%BB%8Dn-d%E1%BA%B9p-t%C3%A0i-nguy%C3%AAn/4.2-x%C3%B3a-s3-bucket/",
+	"title": "Delete S3 Bucket",
+	"tags": [],
+	"description": "",
+	"content": " Access S3:\nFrom the AWS Console, search for and select \u0026ldquo;S3\u0026rdquo;. Select the Bucket to delete:\nFind the bucket you created for the static website (e.g., my-static-website-lab). Delete Content in the Bucket:\nOpen the bucket, select all the files in it, then choose \u0026ldquo;Delete\u0026rdquo; to remove all content. Confirm deletion of Bucket content Result of deleting Bucket content Delete the Bucket Confirm deletion of the Bucket Notification of successful bucket deletion "
+},
+{
+	"uri": "//localhost:1313/2--amazon-s3/2.2-t%E1%BA%A3i-n%E1%BB%99i-dung-l%C3%AAn-bucket/",
+	"title": "Upload Content to Bucket",
+	"tags": [],
+	"description": "",
+	"content": " Access the Bucket:\nClick on the name of the bucket you just created. Upload Files:\nClick on Upload and select the files you want to upload (HTML, CSS, JavaScript, images, etc.). Click Upload to complete. "
+},
+{
+	"uri": "//localhost:1313/3-amazon-cloudfront/",
+	"title": "Amazon CloudFront",
+	"tags": [],
+	"description": "",
+	"content": "Theoretical Basis of Amazon CloudFront Amazon CloudFront is a content delivery network (CDN) service provided by Amazon Web Services. CloudFront accelerates the distribution of content (e.g., websites, images, videos) to users worldwide by using a network of edge locations. Below are the important concepts and features related to CloudFront in this lab:\n1. Content Delivery Network (CDN) CDN is a network of servers located in various geographical locations worldwide. When users access your content, the CDN delivers the content from the server closest to them, reducing load times and improving user experience. Amazon CloudFront is a CDN that allows you to distribute content from origins such as Amazon S3, EC2, or even external servers. 2. Origin Origin is the source from which CloudFront fetches content to distribute. Origins are typically Amazon S3 buckets, EC2 instances, or other HTTP servers. In this lab, the S3 bucket containing static content will be used as the origin for CloudFront to distribute content. 3. Edge Location Edge Location are servers located in various geographical locations worldwide where CloudFront caches content for quick distribution to users. When a user requests content, it is delivered from the nearest edge location, reducing latency and speeding up load times. When users request content, CloudFront checks if the nearest edge location has a cached copy of the content. If it does, the content is delivered from the cache. If not, CloudFront fetches the content from the origin and caches it at the edge location for future requests. 4. Distribution Distribution represents a set of rules for distributing content via CloudFront. You can create two types of distributions: Web Distribution: Used for distributing static and dynamic web content, such as HTML, CSS, JavaScript, images, and videos. RTMP Distribution: Used for streaming media content via the RTMP protocol. In this lab, we will create a Web Distribution to distribute content from the S3 bucket. 5. Cache Behavior Cache Behavior defines how CloudFront handles requests and distributes content. You can configure cache behavior rules to control how CloudFront caches and distributes specific files or handles HTTP methods (GET, POST, etc.). CloudFront allows you to control the cache duration in edge locations (through TTL – Time to Live), optimizing content distribution. 6. Distribution Settings When creating a CloudFront distribution, you can configure various settings related to security and performance, including: Custom Domain Names (CNAMEs): Assign custom domain names to the CloudFront Distribution URL. SSL/TLS Certificates: Configure SSL certificates to encrypt data during transmission between users and CloudFront. Logging: Enable logging to track requests to the Distribution. These settings help customize CloudFront\u0026rsquo;s operation, optimize security, and monitor performance. 7. Invalidation Invalidation is a mechanism that allows you to remove cached content from edge locations. When content in S3 is changed or updated, CloudFront may distribute the old version from the cache. To resolve this, you can request invalidation to refresh the cache across all edge locations. Invalidation ensures that users always receive the latest version of the content. 8. Security and Access Control CloudFront provides various security features to control access to content, including: Origin Access Control: Controls access from CloudFront to the origin, such as S3. This helps protect content from being accessed directly from S3. Geo-Restriction: Limits content distribution to specific countries or regions. Signed URLs and Signed Cookies: Used to restrict time or access to specific resources. In this lab, we do not need to configure advanced security features, but CloudFront still supports default SSL/TLS encryption for connections. 9. Integration with S3 CloudFront works with S3 to distribute static content such as images, videos, and other files with low latency and high speed. When combined with S3, CloudFront can cache content at edge locations, reducing the load on S3 and improving response times for users. 10. Cost Optimization Using CloudFront with S3 not only improves performance but also helps optimize storage and data transfer costs. Instead of accessing S3 directly for each request, CloudFront distributes content from edge locations, reducing transfer costs and easing the load on S3. Summary Amazon CloudFront is a powerful CDN service that helps distribute content quickly and securely from sources like Amazon S3. In this lab, we will learn how to use CloudFront to enhance the performance of distributing static content from S3, while configuring basic caching and security features to improve the global user experience.\nIn this section, we will explore Amazon CloudFront and the steps to work with it. Create CloudFront Distribution Check CloudFront Distribution "
+},
+{
+	"uri": "//localhost:1313/2--amazon-s3/2.3-c%E1%BA%A5u-h%C3%ACnh-bucket-cho-website-t%C4%A9nh/",
+	"title": "Configure Bucket for Static Website",
+	"tags": [],
+	"description": "",
+	"content": " Enable static website hosting:\nIn the bucket, go to \u0026ldquo;Properties\u0026rdquo;. Scroll down to \u0026ldquo;Static website hosting\u0026rdquo; and click \u0026ldquo;Edit\u0026rdquo;. Select \u0026ldquo;Enable\u0026rdquo; and enter the index document name (e.g., index.html). Click \u0026ldquo;Save\u0026rdquo;. Configure Public Access Permissions:\nIn the \u0026ldquo;Permissions\u0026rdquo; section, you will see a part named \u0026ldquo;Block public access (bucket settings)\u0026rdquo;. Click \u0026ldquo;Edit\u0026rdquo; and ensure that the options to block public access (Block all public access) are turned off (meaning your bucket will allow public access). After turning off the block public access feature, click \u0026ldquo;Save changes\u0026rdquo;. Still in the \u0026ldquo;Permissions\u0026rdquo; tab, scroll down to the Bucket Policy section.\nIf there is no policy, you need to add a policy to allow public access to the files in the bucket.\nClick \u0026ldquo;Edit\u0026rdquo; in the Bucket Policy section and add the following code. Make sure to replace \u0026ldquo;my-static-website-lab\u0026rdquo; with your actual bucket name. "
+},
+{
+	"uri": "//localhost:1313/2--amazon-s3/2.4-ki%E1%BB%83m-tra/",
+	"title": "Check Static Website",
+	"tags": [],
+	"description": "",
+	"content": " Get Website URL: Go back to the \u0026ldquo;Properties\u0026rdquo; tab and scroll down to the \u0026ldquo;Static website hosting\u0026rdquo; section. Copy the website URL (e.g., http://my-static-website-lab.s3-website-us-east-1.amazonaws.com). Access that URL in your browser to check if your website is working. "
+},
+{
+	"uri": "//localhost:1313/4-x%C3%B3a-v%C3%A0-d%E1%BB%8Dn-d%E1%BA%B9p-t%C3%A0i-nguy%C3%AAn/",
+	"title": "Delete and Clean Up Resources",
+	"tags": [],
+	"description": "",
+	"content": "Delete Resources After Lab After completing the lab, to avoid incurring unwanted costs, we need to delete the resources created. Below are the simple steps to delete resources on AWS:\nIn this section, we will explore the steps to delete the resources created in the lab. Go to the guide to delete CloudFront Distribution Go to the guide to delete S3 Bucket Go to the guide to check other resources Tip: You can use the AWS CLI to delete buckets more quickly.\n"
+},
+{
+	"uri": "//localhost:1313/5-t%E1%BB%95ng-k%E1%BA%BFt/",
+	"title": "Summary",
+	"tags": [],
+	"description": "",
+	"content": "In this guide, we have gone through the steps from creating an S3 bucket to configuring and deleting a CloudFront Distribution. This is an important process to help you understand how to distribute content from S3 via CloudFront, as well as how to optimize web application performance.\nCreate S3 Bucket: We created a new bucket to store static content such as HTML, CSS, and images. Upload Content: Files were uploaded to the bucket to be ready for distribution. Configure Access Permissions: Set up a policy to allow public access to the files in the bucket. Create CloudFront Distribution: We created a new Distribution, configured the origin as the S3 bucket to efficiently distribute content to users. Check and Verify: Checked the CloudFront URL to ensure the content was successfully distributed. Delete CloudFront Distribution: Finally, we took the necessary steps to disable and delete the Distribution when it was no longer needed. Clean Up Resources: If the bucket is no longer needed, we deleted it to save costs. This process not only helps you understand how to use S3 and CloudFront but also provides practical knowledge on how to manage AWS resources efficiently and cost-effectively.\nTip: Always review the steps you have taken to ensure no steps are missed.\n"
+},
+{
+	"uri": "//localhost:1313/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]

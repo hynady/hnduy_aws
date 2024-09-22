@@ -1,0 +1,113 @@
+[
+{
+	"uri": "//localhost:1313/vi/",
+	"title": "Mở Đầu",
+	"tags": [],
+	"description": "",
+	"content": "Thiết lập và Quản lý Phân Phối Nội Dung với Amazon S3 và CloudFront Trong thời đại số ngày nay, việc phân phối nội dung nhanh chóng và hiệu quả là một yếu tố quan trọng quyết định sự thành công của bất kỳ ứng dụng web nào. Amazon Web Services (AWS) cung cấp các giải pháp mạnh mẽ như Amazon S3 (Simple Storage Service) và Amazon CloudFront để giúp bạn lưu trữ và phân phối nội dung một cách dễ dàng.\nAmazon S3 cho phép bạn lưu trữ dữ liệu dưới dạng đối tượng với độ tin cậy cao, trong khi CloudFront, một dịch vụ mạng phân phối nội dung (CDN), giúp tăng tốc độ truy cập vào nội dung đó từ bất kỳ đâu trên thế giới. Trong hướng dẫn này, chúng ta sẽ cùng nhau khám phá quy trình thiết lập một S3 bucket để lưu trữ nội dung tĩnh, cấu hình CloudFront để phân phối nội dung đó, và cuối cùng là cách xóa CloudFront Distribution khi không còn cần thiết. Qua đó, bạn sẽ có cái nhìn tổng quát về cách tối ưu hóa việc cung cấp nội dung cho người dùng.\n"
+},
+{
+	"uri": "//localhost:1313/vi/3-amazon-cloudfront/3.1-t%E1%BA%A1o-cloudfront-distribution/",
+	"title": "Tạo Distribution",
+	"tags": [],
+	"description": "",
+	"content": " Truy cập AWS CloudFront:\nTừ AWS Management Console, tìm kiếm và chọn \u0026ldquo;CloudFront\u0026rdquo;. Nhấn vào \u0026ldquo;Create\u0026rdquo;: Chọn \u0026ldquo;Origin Domain Name\u0026rdquo;, nhập URL S3 website của bạn (ví dụ: my-static-website-lab.s3.amazonaws.com).\nChọn “Use website endpoint” Giữ các tùy chọn mặc định và nhấn \u0026ldquo;Create Distribution\u0026rdquo;. "
+},
+{
+	"uri": "//localhost:1313/vi/2--amazon-s3/2.1-t%E1%BA%A1o-s3-bucket/",
+	"title": "Tạo S3 Bucket",
+	"tags": [],
+	"description": "",
+	"content": " Truy cập AWS S3:\nĐăng nhập vào AWS Management Console. Tìm kiếm và chọn S3. Tạo Bucket Mới:\nNhấn vào Create bucket. Nhập tên bucket (ví dụ: my-static-website-lab). Nhấn Create bucket để hoàn tất. "
+},
+{
+	"uri": "//localhost:1313/vi/1-introduce/",
+	"title": "Tổng quan",
+	"tags": [],
+	"description": "",
+	"content": "1. Mục tiêu của Lab Hiểu cách lưu trữ một website tĩnh trên S3. Hiểu cách sử dụng CloudFront để tối ưu hóa website. Sử dụng dịch vụ miễn phí hoặc không phát sinh chi phí. 2. Kiến thức cơ bản Amazon S3 (Simple Storage Service): Amazon S3 là dịch vụ lưu trữ đối tượng cung cấp khả năng lưu trữ tệp dữ liệu trong các \u0026ldquo;buckets\u0026rdquo;. S3 rất phổ biến cho việc lưu trữ dữ liệu lớn hoặc các trang web tĩnh (HTML, CSS, JS). Website tĩnh không yêu cầu máy chủ xử lý phía sau mà chỉ có nội dung cố định. Amazon CloudFront: CloudFront là dịch vụ phân phối nội dung (CDN) của AWS, giúp cải thiện hiệu suất tải trang web bằng cách cache nội dung tĩnh và phân phối từ các địa điểm gần nhất với người dùng cuối. Chi phí: S3 cung cấp 5GB miễn phí trong tầng miễn phí. CloudFront có tầng miễn phí cho 1TB dữ liệu truyền tải mỗi tháng trong 12 tháng đầu. 3. Yêu cầu Lab Tài khoản AWS với tầng miễn phí. Một website tĩnh đơn giản (chỉ cần vài file HTML, CSS và JS cơ bản). 4. Điều hướng Giới thiệu Tạo S3 Bucket Tải Nội Dung Lên Bucket Cấu Hình Bucket Cho Website Tĩnh Kiểm Tra Tạo CloudFront Distribution Kiểm Tra CloudFront Distribution Xóa CloudFront Distribution Xóa S3 Bucket Kiểm Tra Dọn Dẹp Thành Công Tổng Kết Note: Đây là phần giới thiệu về các bước thực hiện trong dự án.\n"
+},
+{
+	"uri": "//localhost:1313/vi/4-x%C3%B3a-v%C3%A0-d%E1%BB%8Dn-d%E1%BA%B9p-t%C3%A0i-nguy%C3%AAn/4.1-x%C3%B3a-cloudfront-distribution/",
+	"title": "Xóa CloudFront Distribution",
+	"tags": [],
+	"description": "",
+	"content": " Truy cập CloudFront:\nTrong AWS Management Console, tìm kiếm \u0026ldquo;CloudFront\u0026rdquo; và mở dịch vụ này. Chọn Distribution cần xóa:\nTìm Distribution mà bạn đã tạo. Chọn Distribution đó và nhấn \u0026ldquo;Disable\u0026rdquo;. Việc này sẽ ngăn CloudFront tiếp tục phân phối nội dung. Xóa Distribution:\nSau khi Distribution đã chuyển sang trạng thái \u0026ldquo;Disabled\u0026rdquo;, chọn nó lại và nhấn \u0026ldquo;Delete\u0026rdquo;. Xác nhận xóa. Lưu ý: Quá trình xóa CloudFront Distribution có thể mất vài phút để hoàn tất. "
+},
+{
+	"uri": "//localhost:1313/vi/2--amazon-s3/",
+	"title": "Amazon S3",
+	"tags": [],
+	"description": "",
+	"content": "Amazon S3 Cơ Sở Lý Thuyết Về Amazon S3 Amazon S3 (Simple Storage Service) là một dịch vụ lưu trữ đối tượng cung cấp bởi Amazon Web Services (AWS). S3 được thiết kế để lưu trữ và truy xuất dữ liệu với độ tin cậy cao, bảo mật và khả năng mở rộng. Dưới đây là các khái niệm và tính năng quan trọng liên quan đến S3 trong lab này:\n1. Bucket Bucket là đơn vị cơ bản nhất trong Amazon S3, là nơi chứa các đối tượng (object) được lưu trữ. Mỗi bucket được đặt tên duy nhất trong một vùng AWS (region) và có thể chứa nhiều đối tượng như tệp tin hoặc dữ liệu khác. Trong lab này, chúng ta sẽ tạo một bucket để lưu trữ nội dung tĩnh (HTML, CSS, JavaScript) và sử dụng nó làm nguồn (origin) cho CloudFront để phân phối nội dung. 2. Object Object là thành phần chính của dữ liệu lưu trữ trong S3, bao gồm dữ liệu tệp và siêu dữ liệu liên quan. Mỗi object được xác định duy nhất bằng một key trong bucket. Trong lab này, các tệp nội dung của bạn (website tĩnh) sẽ được lưu trữ dưới dạng các object trong bucket. 3. Quyền Truy Cập (Access Control) S3 cung cấp nhiều cách để quản lý quyền truy cập đến bucket và object, bao gồm Bucket Policies, IAM Roles, và Access Control Lists (ACLs). Trong lab, chúng ta sẽ cấu hình quyền truy cập công khai cho các đối tượng trong bucket thông qua Bucket Policy để cho phép người dùng truy cập vào nội dung qua CloudFront. 4. Tính Năng Lưu Trữ Amazon S3 cung cấp nhiều lớp lưu trữ (storage classes) khác nhau để tối ưu chi phí dựa trên tần suất truy cập và yêu cầu hiệu suất, bao gồm: S3 Standard: Dùng cho dữ liệu thường xuyên truy cập. S3 Standard-IA: Dữ liệu ít được truy cập nhưng cần truy xuất nhanh. S3 Glacier: Dùng cho lưu trữ lâu dài với chi phí thấp. Trong lab này, chúng ta sẽ sử dụng S3 Standard vì đây là lớp lưu trữ phù hợp cho các tệp nội dung tĩnh cần phân phối nhanh chóng qua CloudFront. 5. S3 Static Website Hosting S3 cho phép bạn lưu trữ một website tĩnh trực tiếp từ bucket mà không cần máy chủ web. Các tệp HTML, CSS, và JavaScript có thể được phục vụ dưới dạng một trang web tĩnh. Tuy nhiên, trong lab này, chúng ta sẽ không sử dụng tính năng này, mà thay vào đó sử dụng CloudFront để tăng tốc phân phối nội dung. 6. Kết Nối Với CloudFront Amazon CloudFront là một CDN (Content Delivery Network) giúp phân phối nội dung từ các nguồn như S3 đến người dùng với tốc độ cao hơn nhờ vào các máy chủ phân phối (edge locations) trên toàn cầu. Trong lab này, S3 sẽ được dùng làm Origin cho CloudFront, từ đó các tệp nội dung tĩnh được phân phối đến người dùng trên khắp thế giới với hiệu suất tốt nhất. 7. Cấu Hình Bucket Policy Bucket Policy cho phép bạn kiểm soát quyền truy cập cho toàn bộ bucket và tất cả các đối tượng trong bucket đó. Điều này đặc biệt hữu ích khi bạn muốn chia sẻ công khai các nội dung trong bucket của mình, chẳng hạn như các tệp tĩnh mà CloudFront sẽ phân phối. Chúng ta sẽ tạo và áp dụng một chính sách bucket cho phép truy cập công khai tới nội dung mà không cần phải cấp quyền thủ công cho từng tệp. 8. Bảo Mật và Giám Sát S3 hỗ trợ mã hóa dữ liệu khi lưu trữ (server-side encryption) và khi truyền tải (SSL/TLS). Bạn có thể kích hoạt mã hóa cho c��c đối tượng để bảo mật dữ liệu của mình. S3 Logs và AWS CloudTrail giúp theo dõi các yêu cầu đến bucket, giúp quản lý và bảo mật dữ liệu hiệu quả. Tóm Lại Amazon S3 là một công cụ lưu trữ mạnh mẽ và linh hoạt cho phép lưu trữ và phân phối nội dung một cách hiệu quả. Trong lab này, bạn sẽ học cách sử dụng S3 như nguồn gốc (origin) cho CloudFront để phân phối nội dung tĩnh trên toàn cầu. Việc cấu hình quyền truy cập, bucket policy và tối ưu hóa các lớp lưu trữ là những yếu tố quan trọng trong quá trình triển khai.\nTrong phần này, chúng ta sẽ tìm hiểu về Amazon S3 và các bước để làm việc với nó.\nĐi đến hướng dẫn tạo S3 Bucket Đi đến hướng dẫn tải nội dung lên Bucket Đi đến hướng dẫn kiểm tra "
+},
+{
+	"uri": "//localhost:1313/vi/3-amazon-cloudfront/3.2-ki%E1%BB%83m-tra-cloudfront-distribution/",
+	"title": "Kiểm tra domain CloudFront",
+	"tags": [],
+	"description": "",
+	"content": " Lấy CloudFront URL:\nSau khi tạo xong, bạn sẽ thấy CloudFront cung cấp một URL Sử dụng URL này để truy cập website của bạn thông qua CloudFront:\nMở trình duyệt và truy cập URL CloudFront của bạn. Bạn sẽ thấy rằng website tải nhanh hơn và được phân phối từ nhiều vị trí khác nhau trên thế giới. "
+},
+{
+	"uri": "//localhost:1313/vi/2--amazon-s3/2.2-t%E1%BA%A3i-n%E1%BB%99i-dung-l%C3%AAn-bucket/",
+	"title": "Tải Nội Dung Lên Bucket",
+	"tags": [],
+	"description": "",
+	"content": " Truy cập vào Bucket:\nNhấp vào tên bucket vừa tạo. Tải Tệp Lên:\nNhấn vào Upload và chọn các tệp bạn muốn tải lên (HTML, CSS, JavaScript, hình ảnh, v.v.). Nhấn Upload để hoàn tất. "
+},
+{
+	"uri": "//localhost:1313/vi/4-x%C3%B3a-v%C3%A0-d%E1%BB%8Dn-d%E1%BA%B9p-t%C3%A0i-nguy%C3%AAn/4.2-x%C3%B3a-s3-bucket/",
+	"title": "Xóa S3 Bucket",
+	"tags": [],
+	"description": "",
+	"content": " Truy cập S3:\nTừ AWS Console, tìm và chọn \u0026ldquo;S3\u0026rdquo;. Chọn Bucket cần xóa:\nTìm bucket mà bạn đã tạo cho website tĩnh (ví dụ: my-static-website-lab). Xóa Nội Dung trong Bucket:\nMở bucket, chọn tất cả các tệp trong đó, sau đó chọn \u0026ldquo;Delete\u0026rdquo; để xóa toàn bộ nội dung. Xác nhận xóa nội dung Bucket Kết quả xóa nội dung Bucket Xóa Bucket Xác nhận xóa Bucket Thông báo về việc xóa bucket thành công "
+},
+{
+	"uri": "//localhost:1313/vi/3-amazon-cloudfront/",
+	"title": "Amazon CloudFront",
+	"tags": [],
+	"description": "",
+	"content": "Cơ Sở Lý Thuyết Về Amazon CloudFront Amazon CloudFront là dịch vụ mạng phân phối nội dung (Content Delivery Network - CDN) do Amazon Web Services cung cấp. CloudFront giúp tăng tốc phân phối nội dung (ví dụ: trang web, hình ảnh, video) cho người dùng trên toàn thế giới bằng cách sử dụng một mạng lưới các máy chủ phân phối (edge locations). Dưới đây là các khái niệm và tính năng quan trọng liên quan đến CloudFront trong lab này:\n1. Content Delivery Network (CDN) CDN là mạng lưới các máy chủ phân phối nội dung, đặt tại nhiều vị trí địa lý khác nhau trên thế giới. Khi người dùng truy cập vào nội dung của bạn, CDN sẽ chuyển nội dung từ máy chủ gần nhất với họ, giúp giảm thời gian tải và cải thiện trải nghiệm người dùng. Amazon CloudFront là một CDN cho phép bạn phân phối nội dung từ các nguồn (origin) như Amazon S3, EC2, hoặc thậm chí từ các máy chủ bên ngoài AWS. 2. Origin Origin là nguồn gốc nơi CloudFront lấy nội dung để phân phối. Các origin thường là Amazon S3 bucket, EC2 instance, hoặc một server HTTP khác. Trong lab này, S3 bucket chứa nội dung tĩnh sẽ được sử dụng làm origin cho CloudFront để phân phối nội dung. 3. Edge Location Edge Location là các máy chủ đặt tại các vị trí địa lý khác nhau trên thế giới, nơi CloudFront lưu nội dung cache để phân phối nhanh chóng đến người dùng. Khi có yêu cầu từ người dùng, nội dung sẽ được trả về từ edge location gần nhất, giúp giảm độ trễ và tăng tốc độ tải. Khi người dùng yêu cầu nội dung, CloudFront sẽ kiểm tra xem edge location gần nhất có bản sao (cached copy) của nội dung đó không. Nếu có, nội dung sẽ được phân phối từ cache. Nếu không, CloudFront sẽ lấy nội dung từ origin và lưu nó vào edge location cho các yêu cầu sau. 4. Distribution Distribution là khái niệm đại diện cho một tập hợp các quy tắc phân phối nội dung qua CloudFront. Bạn có thể tạo hai loại distribution: Web Distribution: Dùng để phân phối nội dung web tĩnh và động, như HTML, CSS, JavaScript, hình ảnh và video. RTMP Distribution: Dùng để truyền phát nội dung đa phương tiện (streaming) thông qua giao thức RTMP. Trong lab này, chúng ta sẽ tạo Web Distribution để phân phối nội dung từ S3 bucket. 5. Cache Behavior Cache Behavior xác định cách CloudFront xử lý các yêu cầu và phân phối nội dung. Bạn có thể cấu hình các quy tắc cache behavior để kiểm soát cách CloudFront lưu trữ và phân phối các tệp nhất định, hoặc cách xử lý các phương thức HTTP (GET, POST, v.v.). CloudFront cho phép bạn kiểm soát thời gian cache nội dung trong edge location (thông qua TTL – Time to Live), giúp tối ưu hóa việc phân phối nội dung. 6. Distribution Settings Khi tạo một CloudFront distribution, bạn có thể cấu hình nhiều thiết lập liên quan đến bảo mật và hiệu suất, bao gồm: Custom Domain Names (CNAMEs): Gán tên miền tùy chỉnh cho URL của CloudFront Distribution. SSL/TLS Certificates: Cấu hình chứng chỉ SSL để mã hóa dữ liệu khi truyền tải giữa người dùng và CloudFront. Logging: Kích hoạt tính năng logging để theo dõi các yêu cầu đến Distribution. Những thiết lập này giúp tùy chỉnh cách CloudFront hoạt động, tối ưu bảo mật và theo dõi hiệu suất. 7. Invalidation Invalidation là cơ chế cho phép xóa nội dung được lưu trữ trong các edge location. Khi nội dung trong S3 được thay đổi hoặc cập nhật, CloudFront có thể phân phối phiên bản cũ từ cache. Để giải quyết điều này, bạn có thể yêu cầu invalidation để làm mới cache trên toàn bộ các edge location. Invalidation giúp đảm bảo rằng người dùng luôn nhận được phiên bản mới nhất của nội dung. 8. Bảo Mật và Kiểm Soát Truy Cập CloudFront cung cấp nhiều tính năng bảo mật để kiểm soát quyền truy cập vào nội dung, bao gồm: Origin Access Control: Kiểm soát truy cập từ CloudFront đến nguồn gốc (origin) như S3. Điều này giúp bảo vệ nội dung không bị truy cập trực tiếp từ S3. Geo-Restriction: Giới hạn phân phối nội dung đến các quốc gia hoặc khu vực nhất định. Signed URLs và Signed Cookies: Dùng để giới hạn thời gian hoặc quyền truy cập vào các tài nguyên cụ thể. Trong lab này, chúng ta không cần cấu hình các tính năng bảo mật cao cấp, nhưng CloudFront vẫn hỗ trợ mã hóa SSL/TLS mặc định cho các kết nối. 9. Kết Hợp Với S3 CloudFront hoạt động cùng S3 để phân phối nội dung tĩnh như hình ảnh, video, và các tệp khác với độ trễ thấp và tốc độ cao. Khi kết hợp với S3, CloudFront có thể cache nội dung tại các edge location, giúp giảm tải cho S3 và cải thiện thời gian phản hồi cho người dùng. 10. Tối Ưu Hóa Chi Phí Sử dụng CloudFront cùng với S3 không chỉ cải thiện hiệu suất mà còn giúp tối ưu hóa chi phí lưu trữ và truyền tải dữ liệu. Thay vì truy cập trực tiếp vào S3 mỗi khi có yêu cầu, CloudFront phân phối nội dung từ các edge location, giảm chi phí truyền tải và giúp giảm tải cho S3. Tóm Lại Amazon CloudFront là một dịch vụ CDN mạnh mẽ giúp phân phối nội dung nhanh chóng và an toàn từ các nguồn như Amazon S3. Trong lab này, chúng ta sẽ học cách sử dụng CloudFront để tăng cường hiệu suất phân phối nội dung tĩnh từ S3, đồng thời cấu hình các tính năng cache và bảo mật cơ bản để cải thiện trải nghiệm người dùng toàn cầu.\nTrong phần này, chúng ta sẽ tìm hiểu về Amazon CloudFront và các bước để làm việc với nó. Tạo CloudFront Distribution Kiểm Tra CloudFront Distribution "
+},
+{
+	"uri": "//localhost:1313/vi/2--amazon-s3/2.3-c%E1%BA%A5u-h%C3%ACnh-bucket-cho-website-t%C4%A9nh/",
+	"title": "Cấu hình Bucket cho Website Tĩnh",
+	"tags": [],
+	"description": "",
+	"content": " Bật tính năng website tĩnh:\nTrong bucket, chuyển đến \u0026ldquo;Properties\u0026rdquo;. Cuộn xuống \u0026ldquo;Static website hosting\u0026rdquo; và nhấn \u0026ldquo;Edit\u0026rdquo;. Chọn \u0026ldquo;Enable\u0026rdquo; và nhập tên tệp trang chủ (ví dụ: index.html). Nhấn \u0026ldquo;Save\u0026rdquo;. Cấu hình Quyền Truy Cập Công Khai:\nTrong phần \u0026ldquo;Permissions\u0026rdquo;, bạn sẽ thấy một phần tên là \u0026ldquo;Block public access (bucket settings)\u0026rdquo;. Nhấn \u0026ldquo;Edit\u0026rdquo; và chắc chắn rằng các tùy chọn chặn truy cập công khai (Block all public access) đã bị tắt (nghĩa là bucket của bạn sẽ cho phép truy cập công khai). Sau khi tắt tính năng chặn truy cập công khai, nhấn \u0026ldquo;Save changes\u0026rdquo;. Vẫn ở trong tab \u0026ldquo;Permissions\u0026rdquo;, kéo xuống phần Bucket Policy.\nNếu chưa có chính sách, bạn cần thêm một chính sách để cho phép truy cập công khai tới các tệp trong bucket.\nNhấn \u0026ldquo;Edit\u0026rdquo; trong phần Bucket Policy và thêm đoạn mã sau. Đảm bảo thay thế \u0026ldquo;my-static-website-lab\u0026rdquo; bằng tên bucket thực tế của bạn. "
+},
+{
+	"uri": "//localhost:1313/vi/2--amazon-s3/2.4-ki%E1%BB%83m-tra/",
+	"title": "Kiểm tra Website Tĩnh",
+	"tags": [],
+	"description": "",
+	"content": " Lấy URL Website: Trở lại tab \u0026ldquo;Properties\u0026rdquo; và cuộn xuống phần \u0026ldquo;Static website hosting\u0026rdquo;. Sao chép URL website (ví dụ: http://my-static-website-lab.s3-website-us-east-1.amazonaws.com). Truy cập vào URL đó trên trình duyệt để kiểm tra website của bạn đã hoạt động. "
+},
+{
+	"uri": "//localhost:1313/vi/4-x%C3%B3a-v%C3%A0-d%E1%BB%8Dn-d%E1%BA%B9p-t%C3%A0i-nguy%C3%AAn/",
+	"title": "Xóa và Dọn Dẹp Tài Nguyên",
+	"tags": [],
+	"description": "",
+	"content": "Xóa Tài Nguyên Sau Lab Sau khi hoàn thành lab, để tránh phát sinh chi phí không mong muốn, chúng ta cần xóa các tài nguyên đã tạo. Dưới đây là các bước đơn giản để xóa các tài nguyên trên AWS:\nTrong phần này, chúng ta sẽ tìm hiểu về các bước để xóa các tài nguyên đã tạo trong lab. Đi đến hướng dẫn xóa CloudFront Distribution Đi đến hướng dẫn xóa S3 Bucket Đi đến hướng dẫn kiểm tra lại các tài nguyên khác Tip: Bạn có thể sử dụng AWS CLI để xóa bucket nhanh chóng hơn.\n"
+},
+{
+	"uri": "//localhost:1313/vi/5-t%E1%BB%95ng-k%E1%BA%BFt/",
+	"title": "Tổng kết",
+	"tags": [],
+	"description": "",
+	"content": "Trong hướng dẫn này, chúng ta đã thực hiện các bước từ việc tạo một S3 bucket cho đến việc cấu hình và xóa một CloudFront Distribution. Đây là quy trình quan trọng giúp bạn hiểu cách phân phối nội dung từ S3 qua CloudFront, đồng thời cũng là cách để tối ưu hóa hiệu suất ứng dụng web.\nTạo S3 Bucket: Chúng ta đã tạo một bucket mới để lưu trữ nội dung tĩnh như HTML, CSS, và hình ảnh. Tải Nội Dung Lên: Các tệp đã được tải lên bucket để sẵn sàng cho việc phân phối. Cấu Hình Quyền Truy Cập: Thiết lập chính sách cho phép truy cập công khai vào các tệp trong bucket. Tạo CloudFront Distribution: Chúng ta đã tạo một Distribution mới, cấu hình origin là bucket S3 để phân phối nội dung hiệu quả đến người dùng. Kiểm Tra và Xác Nhận: Kiểm tra URL CloudFront để đảm bảo nội dung đã được phân phối thành công. Xóa CloudFront Distribution: Cuối cùng, chúng ta đã thực hiện các bước cần thiết để vô hiệu hóa và xóa Distribution khi không còn cần thiết. Dọn Dẹp Tài Nguyên: Nếu không cần sử dụng bucket nữa, chúng ta đã xóa nó để tiết kiệm chi phí. Quy trình này không chỉ giúp bạn hiểu rõ cách sử dụng S3 và CloudFront mà còn cung cấp kiến thức thực tiễn về cách quản lý tài nguyên trên AWS một cách hiệu quả và tiết kiệm.\nTip: Hãy luôn kiểm tra lại các bước đã thực hiện để đảm bảo không bỏ sót bất kỳ bước nào.\n"
+},
+{
+	"uri": "//localhost:1313/vi/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/vi/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
